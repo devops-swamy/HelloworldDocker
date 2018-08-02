@@ -3,4 +3,4 @@ From tomcat:8-jre8
 MAINTAINER "Somu"
 
 # Copy to images tomcat path
-COPY /opt/extract/hello.war  /usr/local/tomcat/webapps/
+COPY hello.war  /usr/local/tomcat/webapps/
