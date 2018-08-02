@@ -1,4 +1,8 @@
 #!/bin/bash
-docker service create --name tomcat -p 8888:8080 kuruvasomasekhar/tomcat:latest
 
-docker service ls
+exists=$(docker service ls | grep tomcat)
+if [ ! "$exists" ]; then
+    docker service create --name tomcat -p 8888:8080 kuruvasomasekhar/tomcat:latest
+    else
+    docker serivce update tomcat:latest
+fi
